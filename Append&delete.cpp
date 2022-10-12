@@ -8,14 +8,9 @@ int main(){
     int count1=0;
     int len1=s.length();
     int len2=t.length();
-    if(len1<len2){
-        if(k<=len1&&k<=len2){
+    if(k>=len1+len2){
             cout<<"Yes";
-        }    
-        else{
-           cout<< "No";
         }
-    }
     else{
         int i=0;
         while(s[i]!='\0' && t[i]!='\0'){
@@ -31,12 +26,15 @@ int main(){
         int a=len2 - count1;
         int b=len1 - count1;
         int result=a+b;
-        if(result<=k){
+       
+        if((k-result)%2==0 && k>=result){
             cout<<"Yes";
         }
+        
         else {
             cout<<"No";
-        }
-    }
+        
+       }
+    }    
     return 0;
 }
